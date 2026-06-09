@@ -12,7 +12,7 @@ package:
 source:
   # url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gempy_engine-${{ version }}.tar.gz
   # sha256:
-  path: .
+  path: ..
 
 build:
   number: 0

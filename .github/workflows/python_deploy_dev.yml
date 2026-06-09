@@ -15,13 +15,14 @@ jobs:
   call-workflow-conda-publish:
     name: Publish development conda package on JFrog Artifactory
     if: github.repository == 'MiraGeoscience/gempy_engine'
-    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-publish_rattler_package.yml@v3
+    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-publish_rattler_package.yml@v3.6.0-alpha.1
     permissions:
       id-token: write
       contents: write
     with:
       package-name: 'gempy-engine'
       python-version: '3.12'
+      recipe-path: conda.recipe/recipe.yaml
       source-repo-names: '["public-noremote-conda-dev"]'
       conda-channels: '["conda-forge"]'
       publish-repo-names: '["public-noremote-conda-dev"]'
@@ -32,7 +33,7 @@ jobs:
   call-workflow-pypi-publish:
     name: Publish development pypi package (JFrog Artifactory)
     if: github.repository == 'MiraGeoscience/gempy_engine'
-    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-publish_pypi_package.yml@v3
+    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-publish_pypi_package.yml@v3.6.0-alpha.1
     permissions:
       id-token: write
       contents: write
