@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: gempy-engine
+  python_min: "3.12"
+  version: "${{ load_from_file('_version.txt') | default('3.0.0') }}"
+
+package:
+  name: ${{ name|lower }}
+  version: "${{ version }}"
+
+source:
+  # url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gempy_engine-${{ version }}.tar.gz
+  # sha256:
+  path: .
+
+build:
+  number: 0
+  noarch: python
+  script:
+    env:
+      SETUPTOOLS_SCM_PRETEND_VERSION: "${{ version }}"
+    content:
+      ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+    - setuptools_scm
+  run:
+    - python >=${{ python_min }}
+    - numpy
+    - pydantic
+    - python-dotenv >=1.0.1,<1.1.dev0
+
+tests:
+  - python:
+      python_version: ${{ python_min }}.*
+      imports:
+        - gempy_engine
+      pip_check: true
+
+about:
+  summary: A Python package necessary for GemPy.
+  description: A Python package necessary for GemPy.
+  license: EUPL-1.2
+  license_file: LICENSE
+  homepage: https://github.com/gempy-project/gempy_engine
+  repository: https://github.com/gempy-project/gempy_engine
+
+extra:
+  recipe-maintainers:
+    - conda-forge/geoh5py
+    - conda-forge/gempy

@@ -60,7 +60,8 @@ setup(
     use_scm_version={
             "root"            : ".",
             "relative_to"     : __file__,
-            "write_to"        : path.join("gempy_engine", "_version.py"),
+            "version_file"    : path.join("gempy_engine", "_version.py"),
+            "write_to"        : "_version.txt",
             "fallback_version": "3.0.0"
     },
 )
