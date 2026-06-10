@@ -23,9 +23,9 @@ jobs:
       package-name: gempy-engine
       python-version: '3.12'
       recipe-path: conda.recipe/recipe.yaml
-      source-repo-names: '["public-noremote-conda-dev"]'
+      source-repo-names: '["gempy-noremote-conda-dev"]'
       conda-channels: '["conda-forge"]'
-      publish-repo-names: '["public-noremote-conda-dev"]'
+      publish-repo-names: '["gempy-noremote-conda-dev"]'
       build-experimental: true
     secrets:
       JFROG_ARTIFACTORY_URL: ${{ secrets.JFROG_ARTIFACTORY_URL }}
@@ -42,7 +42,7 @@ jobs:
       package-name: gempy-engine
       version-tag: ${{ github.ref_name }}
       python-version: '3.12'
-      virtual-repo-names: '["public-pypi-dev"]'
+      virtual-repo-names: '["gempy-pypi-dev"]'
     secrets:
       JFROG_ARTIFACTORY_URL: ${{ secrets.JFROG_ARTIFACTORY_URL }}
       JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
