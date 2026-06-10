@@ -20,7 +20,7 @@ jobs:
       id-token: write
       contents: write
     with:
-      package-name: 'gempy-engine'
+      package-name: gempy-engine
       python-version: '3.12'
       recipe-path: conda.recipe/recipe.yaml
       source-repo-names: '["public-noremote-conda-dev"]'
@@ -38,8 +38,8 @@ jobs:
       id-token: write
       contents: write
     with:
-      package-manager: 'setuptools'
-      package-name: 'gempy-engine'
+      package-manager: setuptools
+      package-name: gempy-engine
       version-tag: ${{ github.ref_name }}
       python-version: '3.12'
       virtual-repo-names: '["public-pypi-dev"]'
