@@ -31,7 +31,7 @@ jobs:
     if: |
       github.repository == 'MiraGeoscience/gempy_engine' &&
       (github.event_name == 'release' || github.event.inputs.publish-conda == 'true')
-    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-release_conda_assets.yml@v3.6.0-alpha.1
+    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-release_conda_assets.yml@v3.6.0-alpha.2
     permissions:
       id-token: write
       contents: write
@@ -46,7 +46,7 @@ jobs:
     if: |
       github.repository == 'MiraGeoscience/gempy_engine' &&
       (github.event_name == 'release' || github.event.inputs.publish-pypi == 'true')
-    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-release_pypi_assets.yml@v3.6.0-alpha.1
+    uses: MiraGeoscience/CI-tools/.github/workflows/reusable-python-release_pypi_assets.yml@v3.6.0-alpha.2
     permissions:
       id-token: write
       contents: write
